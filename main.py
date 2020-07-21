@@ -1,6 +1,7 @@
 import matplotlib as plt
 import numpy as np
 from sklearn import datasets, linear_model
+from sklearn.metrics import mean_squared_error
 
 diabetes = datasets.load_diabetes()
 diabetes_X = diabetes.data[:, np.newaxis, 2]
@@ -15,4 +16,7 @@ model = linear_model.LinearRegression()
 
 model.fit(diabetes_X_train,diabetes_Y_train)
 
-model.predict(diabetes_X_test,diabetes_Y_test)
+diabetes_Y_predict = model.predict(diabetes_X_test)
+
+print(mean_squared_error(diabetes_Y_test, diabetes_Y_predict))
+
