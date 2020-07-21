@@ -12,3 +12,4 @@ diabetes_Y_train = diabetes.target[:-40]
 diabetes_Y_test = diabetes.target[-40:]
 
 model = linear_model.LinearRegression()
+model.fit(diabetes_X_train,diabetes_Y_train)
