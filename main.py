@@ -24,4 +24,7 @@ print('weights',model.coef_)
 print('intercept', model.intercept_)
 
 plt.scatter(diabetes_X_test,diabetes_Y_test)
+plt.plot(diabetes_X_test, diabetes_Y_predict)
+plt.xlabel('diabetes_X_test')
+plt.ylabel('diabetes_Y_predict')
 plt.show()
